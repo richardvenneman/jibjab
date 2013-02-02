@@ -1,0 +1,10 @@
+body {
+  background-color: #f7f3ed;
+}
+
+#container {
+  margin: 100px auto;
+  width: 600px;
+  color: #d9a336;
+  font: 28px/36px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
