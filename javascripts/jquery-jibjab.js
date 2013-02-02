@@ -43,6 +43,8 @@ URL:      www.richardvenneman.nl
           }
           _this.element.append(_this.chars[_this.idx]);
           return _this.idx += 1;
+        } else {
+          return clearInterval(_this.ticker);
         }
       }, this.options.speed);
     };

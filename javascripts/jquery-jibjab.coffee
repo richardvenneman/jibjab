@@ -40,6 +40,8 @@ URL:      www.richardvenneman.nl
           
           @element.append @chars[@idx]
           @idx += 1
+        else
+          clearInterval @ticker
       , @options.speed
     
     delayTickWith: (delay) ->
