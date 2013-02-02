@@ -10,7 +10,7 @@ URL:      www.richardvenneman.nl
   
   defaults =
     speed: 65
-    gasp: true
+    gasping: true
     commaDelay: 200
     dotsDelay: 140
     eolDelay: 700
@@ -30,7 +30,7 @@ URL:      www.richardvenneman.nl
         unless @idx is @chars.length
           char = @chars[@idx]
           
-          if @options.gasp
+          if @options.gasping
             if @chars[@idx - 1] is ',' and char is ' '
               @delayTickWith @options.commaDelay
             else if char is '.' and @chars[@idx + 1] is '.'
