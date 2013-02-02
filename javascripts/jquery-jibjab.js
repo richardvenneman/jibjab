@@ -10,8 +10,8 @@ URL:      www.richardvenneman.nl
   var JibJab, defaults, pluginName;
   pluginName = 'jibjab';
   defaults = {
-    speed: 65,
-    gasp: true,
+    speed: 60,
+    gasping: true,
     commaDelay: 200,
     dotsDelay: 140,
     eolDelay: 700
@@ -32,7 +32,7 @@ URL:      www.richardvenneman.nl
         var char;
         if (_this.idx !== _this.chars.length) {
           char = _this.chars[_this.idx];
-          if (_this.options.gasp) {
+          if (_this.options.gasping) {
             if (_this.chars[_this.idx - 1] === ',' && char === ' ') {
               _this.delayTickWith(_this.options.commaDelay);
             } else if (char === '.' && _this.chars[_this.idx + 1] === '.') {

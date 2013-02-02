@@ -9,7 +9,7 @@ URL:      www.richardvenneman.nl
   pluginName = 'jibjab'
   
   defaults =
-    speed: 65
+    speed: 60
     gasping: true
     commaDelay: 200
     dotsDelay: 140
