@@ -9,8 +9,8 @@ URL:      www.richardvenneman.nl
   pluginName = 'jibjab'
   
   defaults =
-    speed: 65
-    gasp: true
+    speed: 60
+    gasping: true
     commaDelay: 200
     dotsDelay: 140
     eolDelay: 700
@@ -30,7 +30,7 @@ URL:      www.richardvenneman.nl
         unless @idx is @chars.length
           char = @chars[@idx]
           
-          if @options.gasp
+          if @options.gasping
             if @chars[@idx - 1] is ',' and char is ' '
               @delayTickWith @options.commaDelay
             else if char is '.' and @chars[@idx + 1] is '.'
@@ -40,6 +40,8 @@ URL:      www.richardvenneman.nl
           
           @element.append @chars[@idx]
           @idx += 1
+        else
+          clearInterval @ticker
       , @options.speed
     
     delayTickWith: (delay) ->
