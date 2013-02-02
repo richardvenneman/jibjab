@@ -40,8 +40,10 @@ URL:      www.richardvenneman.nl
           
           @element.append @chars[@idx]
           @idx += 1
+          @element.trigger 'progress', Math.ceil((@idx / @chars.length) * 100)
         else
           clearInterval @ticker
+          @element.trigger 'finished'
       , @options.speed
     
     delayTickWith: (delay) ->

@@ -14,8 +14,16 @@
     <script src="javascripts/vendor/jquery-1.9.0.min.js"></script>
     <script src="javascripts/jquery-jibjab.js"></script>
     <script type="text/javascript">
-    var text = "You're right, we are mortal and fragile. But even if we are tortured or wounded, we'll fight to survive. You should feel the pain we feel and understand. I am the messenger that will deliver you to that pain and understanding!"
-    $('#container').jibjab({text: text, gasping: false});
+      var text = "You're right, we are mortal and fragile. But even if we are tortured or wounded, we'll fight to survive. You should feel the pain we feel and understand. I am the messenger that will deliver you to that pain and understanding!"
+      var container = $('#container').jibjab({text: text, gasping: false});
+      
+      container.on('progress', function(e, progress) {
+        console.log(progress);
+      });
+      
+      container.on('finished', function() {
+        console.log('Done raging.');
+      });
     </script>
   </body>
 </html>

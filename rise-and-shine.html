@@ -15,7 +15,15 @@
     <script src="javascripts/jquery-jibjab.js"></script>
     <script type="text/javascript">
       var text = "Rise and shine, Mister Freeman. Rise and... shine. Not that I... wish to imply you have been sleeping on the job. No one is more deserving of a rest, and all the effort in the world would have gone to waste until... well, let's just say your hour has... come again."
-      $('#container').jibjab({text: text});
+      var container = $('#container').jibjab({text: text});
+      
+      container.on('progress', function(e, progress) {
+        console.log(progress);
+      });
+      
+      container.on('finished', function() {
+        console.log('Mister Freeman has risen.');
+      });
     </script>
   </body>
 </html>

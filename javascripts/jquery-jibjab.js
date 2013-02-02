@@ -42,9 +42,11 @@ URL:      www.richardvenneman.nl
             }
           }
           _this.element.append(_this.chars[_this.idx]);
-          return _this.idx += 1;
+          _this.idx += 1;
+          return _this.element.trigger('progress', Math.ceil((_this.idx / _this.chars.length) * 100));
         } else {
-          return clearInterval(_this.ticker);
+          clearInterval(_this.ticker);
+          return _this.element.trigger('finished');
         }
       }, this.options.speed);
     };
