@@ -1,10 +1,30 @@
 body {
   background-color: #f7f3ed;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+h1 {
+  margin: 60px auto;
+  width: 600px;
+  font-size: 24px;
+  color: #d4cbbc;
+  text-transform: uppercase;
+}
+
+h1 a {
+  font-size: 16px;
+  font-weight: normal;
+  color: #acb5d0;
+  text-transform: none;
+  text-decoration: none;
+}
+h1 a:visited { color: #acb5d0; }
+h1 a:hover { color: #7B829B; }
+
 #container {
-  margin: 100px auto;
+  margin: 0 auto;
   width: 600px;
   color: #d9a336;
-  font: 28px/36px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 28px;
+  line-height: 36px;
 }
