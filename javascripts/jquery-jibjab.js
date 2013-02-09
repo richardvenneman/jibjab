@@ -6,7 +6,7 @@ Author:   Richard Venneman
 URL:      www.richardvenneman.nl
 */
 
-(function($, window, document) {
+(function($) {
   var JibJab, defaults, pluginName;
   pluginName = 'jibjab';
   defaults = {
@@ -22,7 +22,11 @@ URL:      www.richardvenneman.nl
       this.element = $(element);
       this.options = $.extend({}, defaults, options);
       this.idx = 0;
-      this.chars = this.options.text.split('');
+      this.chars = (this.options.text || this.element.text()).split('');
+      this.element.empty();
+      if (!this.chars.length) {
+        console.log('JibJab warning: target element is empty and no text has been passed.');
+      }
       this.tick();
     }
 
@@ -69,4 +73,4 @@ URL:      www.richardvenneman.nl
       }
     });
   };
-})(jQuery, window, document);
+})(jQuery);
