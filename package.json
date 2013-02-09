@@ -1,0 +1,11 @@
+{
+  "name": "jquery-jibjab",
+  "version": "0.1.0",
+  "main": "./javascripts/jquery.jibjab.js",
+  "devDependencies": {
+    "jquery": "*",
+    "jsdom": "*",
+    "mocha": "*",
+    "chai": "*"
+  }
+}

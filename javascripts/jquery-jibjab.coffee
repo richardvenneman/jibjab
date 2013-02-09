@@ -5,7 +5,7 @@ Author:   Richard Venneman
 URL:      www.richardvenneman.nl
 ###
 
-(($, window, document) ->
+(($) ->
   pluginName = 'jibjab'
   
   defaults =
@@ -21,7 +21,10 @@ URL:      www.richardvenneman.nl
       @options = $.extend {}, defaults, options
       
       @idx = 0
-      @chars = @options.text.split ''
+      @chars = (@options.text or @element.text()).split ''
+      @element.empty()
+      
+      console.log 'JibJab warning: target element is empty and no text has been passed.' if not @chars.length
       
       @tick()
     
@@ -48,6 +51,7 @@ URL:      www.richardvenneman.nl
     
     delayTickWith: (delay) ->
       clearInterval @ticker
+      
       setTimeout =>
         @tick()
       , delay
@@ -56,4 +60,4 @@ URL:      www.richardvenneman.nl
     this.each ->
       if !$.data(this, "plugin_#{pluginName}")
         $.data(this, "plugin_#{pluginName}", new JibJab(this, options))
-)(jQuery, window, document)
+)(jQuery)

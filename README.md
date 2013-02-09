@@ -12,12 +12,24 @@ Examples:
 After including the jquery.jibjab.js javascript along with jQuery, you can call `jibjab()` on a DOM element:
 
 ```javascript
-$('#container').jibjab();
+$('#container').jibjab({text: 'This text will be revealed one character at the time' });
 ```
+
+When calling `jibjab()` without the `text` option, JibJab utilises the elements innerHTML. Make sure you pass some text when calling `jibjab()` on an empty target element.
 
 ## Options
 
 The following options can be passed with initialization.
+
+| Option         | Type    | Default | Description                                                                                                                  |
+| -------------- | ------- | ------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **speed**      | integer | 60      | The speed in milliseconds at which characters should be revealed.                                                            |
+| **gasping**    | boolean | true    | Whether or not punctutation breathing space should be inserted. Currently comma's, multiple dots and EOL dots are supported. |
+| **commaDelay** | integer | 200     | Breathing space after a comma. Requires gasping to be true.                                                                  |
+| **dotsDelay**  | integer | 140     | Breathing space after multiple dots. Requires gasping to be true.                                                            |
+| **eolDelay**   | integer | 200     | Breathing space after completing a line. Requires gasping to be true.                                                        |
+
+Pass options like this:
 
 ```javascript
 $('#container').jibjab({
@@ -26,34 +38,16 @@ $('#container').jibjab({
 });
 ```
 
-### `speed` - integer
-_Default: 60_
-
-The speed in milliseconds at which characters should be revealed.
-
-### `gasping` - boolean
-_Default: true_
-
-Whether or not punctutation breathing space should be inserted. Currently comma's, multiple dots and EOL dots are supported.
-
-### `commaDelay` - integer
-_Default: 200_
-
-Breathing space after a comma. Requires gasping to be true.
-
-### `dotsDelay` - integer
-_Default: 140_
-
-Breathing space after multiple dots. Requires gasping to be true.
-
-### `eolDelay` - integer
-_Default: 200_
-
-Breathing space after completing a line. Requires gasping to be true.
-
 ## Events
 
 JibJab fires the following events.
+
+| Event        | Parameters      | Description                                                        |
+| ------------ | --------------- | ------------------------------------------------------------------ |
+| **Progress** | event, progress | Returns the progress on a 0-100 scale after revealing a character. |
+| **Finished** | *none*          | Fired when all characters have been revealed.                      |
+
+Subscribe to events like this:
 
 ```javascript
 $('#container').on('finish', function() {
@@ -61,17 +55,16 @@ $('#container').on('finish', function() {
 });
 ```
 
-### `progress` - (event, progress)
+## Specs
 
-Returns the progress on a 0-100 scale after revealing a character.
+The specs are written with mocha. To run the specs:
 
-### `finished`
-
-Fired when all characters have been revealed.
+1. Install [mocha](http://visionmedia.github.com/mocha)
+2. run `npm install` from the project directory to install the dependencies
+3. run `mocha --compilers coffee:coffee-script` from the project directory, optionally passing `--reporter nyan` (:
 
 ## Planned
 
-- Specs
 - HTML tag support
 - Sound effects
 - Computing word breaks within container
