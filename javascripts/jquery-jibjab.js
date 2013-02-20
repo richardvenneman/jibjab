@@ -3,7 +3,7 @@
 jQuery JibJab v0.7
 
 Author:   Richard Venneman
-URL:      www.richardvenneman.nl
+URL:      www.vnn.mn
 */
 
 (function($) {
