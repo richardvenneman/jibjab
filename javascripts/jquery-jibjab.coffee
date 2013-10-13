@@ -1,5 +1,5 @@
 ###
-jQuery JibJab v0.7
+jQuery JibJab v0.1
 
 Author:   Richard Venneman
 URL:      www.vnn.mn
