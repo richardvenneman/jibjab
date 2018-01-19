@@ -59,7 +59,7 @@ $('#container').on('finish', function() {
 
 The specs are written with mocha. To run the specs:
 
-1. Install [mocha](http://visionmedia.github.com/mocha)
+1. Install [mocha](http://mochajs.org/)
 2. run `npm install` from the project directory to install the dependencies
 3. run `mocha --compilers coffee:coffee-script` from the project directory, optionally passing `--reporter nyan` (:
 
